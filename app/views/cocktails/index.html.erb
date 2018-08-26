@@ -1,7 +1,65 @@
-<h1>Your cocktail list</h1>
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="images/logo.png" alt="logo">
+  </a>
 
-<% @cocktails.each do |cocktail| %>
-  <h2><%= cocktail.name %></h2>
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-<%= link_to cocktail.name, cocktail_path(cocktail) %>
-<% end %>
+    <button type="button" class="btn btn-primary btn-xs">Add a new coktail</button>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Add a new cocktai</a></li>
+        <li><a href="#">Trips</a></li>
+        <li><a href="#">Messagese</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://img2.bibamagazine.fr/var/bibamagazine/storage/images/style-de-vie/10-cocktails-sans-alcool-a-tomber-24839/200133-1-fre-FR/10-cocktails-sans-alcool-a-tomber_width1024.jpg');">
+  <div class="banner-content">
+    <h1>Cocktail</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-sm-6 col-md-4">
+      <img src="images/logo.png" alt="">
+      <div class="thumbnail">
+       <h2><%= cocktail.name %></h2>
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fa fa-github"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fa fa-heart"></i> at Le Wagon
+  </div>
+</div>

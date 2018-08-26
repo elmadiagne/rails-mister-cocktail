@@ -1,10 +1,17 @@
 <h1>Cocktails#show</h1>
 <% @cocktail.doses.each do |dose| %>
-  <h2><%= dose.ingredient.name %></h2>
-  <h2><%= dose.description %></h2>
+  <h2>Ingredient : <%= dose.ingredient.name %></h2>
+  <h2>decription : <%= dose.description %></h2>
+  <%= link_to 'Delete dose', dose_path(dose), method: :delete %>
 <% end %>
+<br/>
+<br/>
+<br/>
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to 'Back', cocktails_path %>
+    <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+  <% end %>
+
